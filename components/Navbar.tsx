@@ -81,7 +81,7 @@ export default function Navbar() {
         {/* MENU DESKTOP */}
         {isDesktop && (
           <BlurIn delay={0.2}>
-            <div className="flex flex-row gap-5 items-center justify-end text-xs font-bold text-white uppercase">
+            <div className="flex flex-row gap-5 items-center justify-end font-bold text-xs text-white uppercase">
               <Link className="hover:text-gray-300" href="#whoiam">
                 Who I am
               </Link>
