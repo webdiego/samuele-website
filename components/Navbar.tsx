@@ -1,9 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 640);
@@ -12,9 +14,23 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Chiude il menu cliccando ovunque fuori
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    if (open) document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [open]);
+
   return (
     <header className="relative z-50 w-full bg-black text-white text-sm shadow">
-      <nav className="max-w-4xl w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between py-3 relative">
+      <nav
+        ref={navRef}
+        className="max-w-4xl w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between py-3 relative"
+      >
         {/* Brand + Burger */}
         <div className="flex items-center justify-between">
           <Link className="flex-none text-xl font-bold" href="#">
@@ -79,22 +95,38 @@ export default function Navbar() {
 
         {/* MENU MOBILE con animazione */}
         <div
-          className={`absolute left-0 top-full w-full bg-black/95 text-white flex flex-col gap-5 text-left pl-5 uppercase text-xs font-bold py-6 transition-all duration-300 ease-in-out transform -z-10 ${
+          className={`absolute left-0 top-full w-full bg-black/95 text-white flex flex-col gap-5 text-left pl-5 uppercase text-xs font-bold py-6 transition-all duration-300 ease-in-out transform ${
             open
               ? "opacity-100 translate-y-0 pointer-events-auto"
-              : "opacity-0 -translate-y-15 pointer-events-none"
+              : "opacity-0 -translate-y-5 pointer-events-none"
           }`}
         >
-          <Link className="hover:text-gray-300" href="#whoiam">
+          <Link
+            onClick={() => setOpen(false)}
+            className="hover:text-gray-300"
+            href="#whoiam"
+          >
             Who I am
           </Link>
-          <Link className="hover:text-gray-300" href="#">
+          <Link
+            onClick={() => setOpen(false)}
+            className="hover:text-gray-300"
+            href="#"
+          >
             Personal training
           </Link>
-          <Link className="hover:text-gray-300" href="#">
+          <Link
+            onClick={() => setOpen(false)}
+            className="hover:text-gray-300"
+            href="#"
+          >
             My results
           </Link>
-          <Link className="hover:text-gray-300" href="#">
+          <Link
+            onClick={() => setOpen(false)}
+            className="hover:text-gray-300"
+            href="#"
+          >
             Contact
           </Link>
         </div>
