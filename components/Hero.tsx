@@ -30,7 +30,7 @@ export default function Hero() {
       <Image
         src="/hero.jpg"
         className="absolute brightness-30"
-        priority
+        preload={true}
         fill={true}
         objectFit="cover"
         alt="hero"
