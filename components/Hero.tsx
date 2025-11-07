@@ -5,22 +5,22 @@ const highlights = [
   {
     icon: <Activity />,
     text: "Science-based",
-    subText: "Lorem ipsum dolor sit",
+    subText: "Lorem ipsum dolor",
   },
   {
     icon: <Sprout className="text-xl" />,
     text: "Grown",
-    subText: "Lorem ipsum dolor sit",
+    subText: "Lorem ipsum dolor",
   },
   {
     icon: <Medal />,
     text: "Result",
-    subText: "Lorem ipsum dolor sit",
+    subText: "Lorem ipsum dolor",
   },
   {
     icon: <Blocks />,
     text: "Build your shape",
-    subText: "Lorem ipsum dolor sit",
+    subText: "Lorem ipsum dolor",
   },
 ];
 
@@ -29,15 +29,14 @@ export default function Hero() {
     <div className="relative h-[calc(100vh-48px)]">
       <Image
         src="/hero.jpg"
-        className="absolute brightness-30"
+        className="absolute brightness-40"
         preload={true}
         loading="eager"
         fill={true}
-        objectFit="cover"
         alt="hero"
       />
 
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full flex flex-col items-center justify-center text-white max-w-lg text-center mx-auto pb-20">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full flex flex-col items-center justify-center text-white max-w-lg text-center mx-auto pb-20 px-4">
         <h1 className="text-5xl md:text-6xl font-black uppercase">
           Build the strength
         </h1>
