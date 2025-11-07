@@ -25,7 +25,7 @@ const results = [
 export default function Result() {
   return (
     <>
-      <div id="result" className="relative h-screen md:h-auto">
+      <div id="results" className="relative h-screen md:h-auto">
         <img
           src="/hero_2.jpg"
           className="h-screen object-[65%_75%] md:object-center md:h-[50vh] object-cover w-full "
@@ -48,7 +48,7 @@ export default function Result() {
           </div>
         </div>
       </div>
-      <div className="max-w-4xl mx-auto py-20 px-4 space-y-5 text-sm">
+      <div className="max-w-4xl mx-auto pt-20 pb-10 px-4 space-y-5 text-sm">
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nobis
           fugiat tempore ullam ipsam voluptate omnis, repudiandae, ea

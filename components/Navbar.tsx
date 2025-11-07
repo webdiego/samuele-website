@@ -88,10 +88,13 @@ export default function Navbar() {
               <Link className="hover:text-gray-300" href="#personal-trainer">
                 Personal training
               </Link>
-              <Link className="hover:text-gray-300" href="#">
-                My results
+              <Link className="hover:text-gray-300" href="#results">
+                Results
               </Link>
-              <Link className="hover:text-gray-300" href="#">
+              <Link className="hover:text-gray-300" href="#booking">
+                Booking
+              </Link>
+              <Link className="hover:text-gray-300" href="#contact">
                 Contact
               </Link>
             </div>
@@ -123,14 +126,21 @@ export default function Navbar() {
           <Link
             onClick={() => setOpen(false)}
             className="hover:text-gray-300"
-            href="#"
+            href="#results"
           >
-            My results
+            Results
           </Link>
           <Link
             onClick={() => setOpen(false)}
             className="hover:text-gray-300"
-            href="#"
+            href="#booking"
+          >
+            Booking
+          </Link>
+          <Link
+            onClick={() => setOpen(false)}
+            className="hover:text-gray-300"
+            href="#contact"
           >
             Contact
           </Link>

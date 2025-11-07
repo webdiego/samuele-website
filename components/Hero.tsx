@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { Medal, Sprout, Activity, Blocks } from "lucide-react";
 import { TextFadeIn } from "./effects/TextFadeIn";
 import { BlurIn } from "./effects/BlurIn";
+import Link from "next/link";
 
 const highlights = [
   {
@@ -48,9 +49,11 @@ export default function Hero() {
             project.
           </p>
           <Button size={"sm"} variant="dark" className=" mt-5 cursor-pointer">
-            <p className="text-black uppercase font-bold text-xs ">
-              Start today
-            </p>
+            <Link href="#booking">
+              <p className="text-black uppercase font-bold text-xs ">
+                Start today
+              </p>
+            </Link>
           </Button>
         </BlurIn>
       </div>
