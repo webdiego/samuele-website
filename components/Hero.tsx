@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { Medal, Sprout, Activity, Blocks } from "lucide-react";
 import { TextFadeIn } from "./TextFadeIn";
 import { BlurIn } from "./BlurIn";
+
 const highlights = [
   {
     icon: <Activity />,
@@ -41,7 +42,9 @@ export default function Hero() {
 
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full flex flex-col items-center justify-center text-white max-w-lg text-center mx-auto pb-20 px-4">
         <TextFadeIn direction="down">
-          <h1 className="text-6xl font-black uppercase">Build the strength</h1>
+          <h1 className="text-5xl md:text-6xl font-black uppercase">
+            Build the strength
+          </h1>
         </TextFadeIn>
         <BlurIn>
           <p className="text-sm md:text-base mt-1 max-w-sm">
