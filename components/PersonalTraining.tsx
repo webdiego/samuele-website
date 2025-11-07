@@ -26,7 +26,32 @@ export default function PersonalTraining() {
 
   const OPTIONS: EmblaOptionsType = { dragFree: true };
   const SLIDE_COUNT = images.length;
-  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
+  const SLIDES = [
+    {
+      imgPath: "/hero.jpg",
+    },
+    {
+      imgPath: "/hero_1.jpg",
+    },
+    {
+      imgPath: "/hero_2.jpg",
+    },
+    {
+      imgPath: "/personal.jpg",
+    },
+    {
+      imgPath: "/hero.jpg",
+    },
+    {
+      imgPath: "/hero_1.jpg",
+    },
+    {
+      imgPath: "/hero_2.jpg",
+    },
+    {
+      imgPath: "/personal.jpg",
+    },
+  ];
 
   return (
     <>
@@ -72,8 +97,36 @@ export default function PersonalTraining() {
           minima velit molestias. Lorem ipsum dolor sit amet consectetur
           adipisicing elit. Ullam, inventore!
         </p>
-        <div className="mt-2">
-          <Carousel slides={SLIDES} options={OPTIONS} images={images} />
+        <div className="mt-10">
+          <Carousel slides={SLIDES} options={OPTIONS} />
+        </div>
+      </div>
+      <div className="max-w-4xl mx-auto py-5 pb-20 px-4 space-y-5 text-sm grid grid-cols-1 md:grid-cols-2">
+        <div>
+          <h3 className="font-black text-4xl uppercase text-black">Lorem.</h3>
+          <h3 className="font-black text-4xl uppercase text-black">Ipsum.</h3>
+          <h3 className="font-black text-4xl uppercase text-black">Dolor.</h3>
+        </div>
+
+        <div className="space-y-3">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nobis
+            fugiat tempore ullam ipsam voluptate omnis, repudiandae, ea
+            voluptatibus fuga facere rem ex excepturi veniam dolore inventore
+            minima velit molestias.
+          </p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nobis
+            fugiat tempore ullam ipsam voluptate omnis, repudiandae, ea
+            voluptatibus fuga facere rem ex excepturi veniam dolore inventore
+            minima velit molestias.
+          </p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nobis
+            fugiat tempore ullam ipsam voluptate omnis, repudiandae, ea
+            voluptatibus fuga facere rem ex excepturi veniam dolore inventore
+            minima velit molestias.
+          </p>
         </div>
       </div>
     </>

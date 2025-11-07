@@ -10,14 +10,13 @@ import {
 } from "./CarouselArrowButtons";
 
 type PropType = {
-  slides: number[];
-  options?: EmblaOptionsType;
-  images: {
+  slides: {
     imgPath: string;
   }[];
+  options?: EmblaOptionsType;
 };
 
-const Carousel: React.FC<PropType> = ({ slides, options, images }) => {
+const Carousel: React.FC<PropType> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -48,12 +47,12 @@ const Carousel: React.FC<PropType> = ({ slides, options, images }) => {
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {images.map((image, index) => (
+          {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__number">
                 <img
                   className="object-cover h-full"
-                  src={image.imgPath}
+                  src={slide.imgPath}
                   alt=""
                 />
               </div>
