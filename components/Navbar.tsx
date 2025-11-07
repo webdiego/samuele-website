@@ -33,8 +33,8 @@ export default function Navbar() {
         className="max-w-4xl w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between py-3 relative"
       >
         {/* Brand + Burger */}
-        <div className="flex items-center justify-between">
-          <BlurIn delay={0.2}>
+        <BlurIn delay={0.2}>
+          <div className="flex items-center justify-between">
             <Link className="flex-none text-xl font-bold" href="#">
               SAMUELE SPRIANO
             </Link>
@@ -75,8 +75,8 @@ export default function Navbar() {
                 )}
               </button>
             </div>
-          </BlurIn>
-        </div>
+          </div>
+        </BlurIn>
 
         {/* MENU DESKTOP */}
         {isDesktop && (
