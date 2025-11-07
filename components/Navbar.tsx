@@ -35,7 +35,7 @@ export default function Navbar() {
         {/* Brand + Burger */}
         <BlurIn delay={0.2}>
           <div className="flex items-center justify-between">
-            <Link className="flex-none text-xl font-bold" href="#">
+            <Link className="flex-none  font-bold" href="#">
               SAMUELE SPRIANO
             </Link>
             <div className="sm:hidden">
@@ -85,7 +85,7 @@ export default function Navbar() {
               <Link className="hover:text-gray-300" href="#whoiam">
                 Who I am
               </Link>
-              <Link className="hover:text-gray-300" href="#">
+              <Link className="hover:text-gray-300" href="#personal-trainer">
                 Personal training
               </Link>
               <Link className="hover:text-gray-300" href="#">
@@ -116,7 +116,7 @@ export default function Navbar() {
           <Link
             onClick={() => setOpen(false)}
             className="hover:text-gray-300"
-            href="#"
+            href="#personal-trainer"
           >
             Personal training
           </Link>

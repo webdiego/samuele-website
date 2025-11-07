@@ -30,13 +30,9 @@ const highlights = [
 export default function Hero() {
   return (
     <div className="relative h-[calc(100vh-48px)]">
-      <Image
-        src="/hero.jpg"
-        className="absolute brightness-35 object-cover"
-        preload={true}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        loading="eager"
-        fill={true}
+      <img
+        src="/hero_1.jpg"
+        className="absolute brightness-35 object-cover object-left h-full w-full"
         alt="hero"
       />
 
