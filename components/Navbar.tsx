@@ -27,7 +27,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className="relative z-50 w-full bg-black text-white text-sm shadow">
+    <header className="sticky top-0 z-50 w-full bg-black text-white text-sm shadow">
       <nav
         ref={navRef}
         className="max-w-4xl w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between py-3 relative"

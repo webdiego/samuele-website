@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "./ui/button";
 import { Medal, Sprout, Activity, Blocks } from "lucide-react";
 import { TextFadeIn } from "./effects/TextFadeIn";
