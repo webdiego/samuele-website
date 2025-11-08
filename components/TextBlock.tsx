@@ -19,16 +19,11 @@ const ImageComponent = ({ value }: { value: ImageValue }) => {
   if (!value) return null;
   return (
     <Image
-      className="rounded-lg not-prose w-full h-auto my-6"
-      src={urlFor(value)
-        .width(800)
-        .height(500)
-        .quality(80)
-        .auto("format")
-        .url()}
+      className="not-prose w-full h-auto my-6"
+      src={urlFor(value).quality(100).auto("format").url()}
       alt={value.alt || ""}
-      width={800}
-      height={500}
+      width={1000}
+      height={1000}
     />
   );
 };
