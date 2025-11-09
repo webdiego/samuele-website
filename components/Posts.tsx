@@ -50,7 +50,7 @@ export default async function Posts() {
 
         {/* Griglia */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {posts.map((post: Post) => (
+          {posts.slice(0, 3).map((post: Post) => (
             <PostCard key={post._id} post={post as Post} />
           ))}
         </div>
