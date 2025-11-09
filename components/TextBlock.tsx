@@ -41,17 +41,22 @@ const VideoComponent = ({ value }: { value: VideoValue }) => {
     }
     return url;
   };
+
   if (!value?.url) return null;
+  const embedUrl = getEmbedUrl(value.url);
 
   return (
     <div className="my-6 aspect-video">
-      <iframe
-        src={getEmbedUrl(value.url)}
-        title="Video"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        className="w-full h-full rounded-lg"
-      />
+      {embedUrl ? (
+        <iframe
+          src={embedUrl}
+          title="Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      ) : (
+        <p>Invalid video URL</p>
+      )}
     </div>
   );
 };
