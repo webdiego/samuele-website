@@ -9,7 +9,7 @@ export default function Navbar() {
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 640);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 940);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -81,8 +81,8 @@ export default function Navbar() {
         {/* MENU DESKTOP */}
         {isDesktop && (
           <BlurIn delay={0.2}>
-            <div className="flex flex-row gap-5 items-center justify-end font-bold text-xs text-white uppercase">
-              <Link className="hover:text-gray-300" href="/#whoiam">
+            <div className="flex flex-row gap-4 items-center justify-end font-bold text-[10px] text-white uppercase">
+              <Link className="hover:text-gray-300 " href="/#whoiam">
                 Who I am
               </Link>
               <Link className="hover:text-gray-300" href="/#personal-trainer">
@@ -93,6 +93,9 @@ export default function Navbar() {
               </Link>
               <Link className="hover:text-gray-300" href="/#booking">
                 Booking
+              </Link>
+              <Link className="hover:text-gray-300" href="/#studies">
+                Studies
               </Link>
               <Link className="hover:text-gray-300" href="/#contact">
                 Contact
@@ -136,6 +139,13 @@ export default function Navbar() {
             href="/#booking"
           >
             Booking
+          </Link>
+          <Link
+            onClick={() => setOpen(false)}
+            className="hover:text-gray-300"
+            href="/#studies"
+          >
+            Studies
           </Link>
           <Link
             onClick={() => setOpen(false)}
