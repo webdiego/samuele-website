@@ -1,6 +1,6 @@
 import { getPosts } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
-import PostCard from "./PostCard";
+import PostCard from "@/components/PostCard";
 import { type Post } from "@/sanity/types";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -11,23 +11,9 @@ export default async function Posts() {
   });
 
   return (
-    <div className="bg-white w-full h-full mt-10">
-      <div className="min-h-screen w-full bg-[#ffffff] relative">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `
-        linear-gradient(to right, #e2e8f0 1px, transparent 1px),
-        linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)
-      `,
-            backgroundSize: "20px 30px",
-            WebkitMaskImage:
-              "radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
-            maskImage:
-              "radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
-          }}
-        />
-        <div className="max-w-4xl mx-auto px-4 py-20 text-black z-100 absolute inset-0">
+    <>
+      <div className="bg-white w-full h-screen">
+        <div className="max-w-4xl mx-auto px-4 py-20 text-black">
           <div className="flex flex-col items-start">
             <p className="font-black uppercase mb-1">
               <span>|</span>ARTICLES
@@ -46,16 +32,16 @@ export default async function Posts() {
             {posts.map((post: Post) => (
               <PostCard key={post._id} post={post as Post} />
             ))}
-          </div>
-          <div className="flex items-center justify-start w-full mt-5">
-            <Link href={`/articles`}>
-              <Button className="text-white uppercase font-bold text-xs bg-black w-full">
-                Read all
-              </Button>
-            </Link>
+            <div className="flex">
+              <Link href={`/articles`}>
+                <Button className="text-black w-full" variant={"outline"}>
+                  Read all
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

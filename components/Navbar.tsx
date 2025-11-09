@@ -35,7 +35,7 @@ export default function Navbar() {
         {/* Brand + Burger */}
         <BlurIn delay={0.2}>
           <div className="flex items-center justify-between">
-            <Link className="flex-none  font-bold" href="#">
+            <Link className="flex-none  font-bold" href="/">
               SAMUELE SPRIANO
             </Link>
             <div className="sm:hidden">
@@ -82,19 +82,19 @@ export default function Navbar() {
         {isDesktop && (
           <BlurIn delay={0.2}>
             <div className="flex flex-row gap-5 items-center justify-end font-bold text-xs text-white uppercase">
-              <Link className="hover:text-gray-300" href="#whoiam">
+              <Link className="hover:text-gray-300" href="/#whoiam">
                 Who I am
               </Link>
-              <Link className="hover:text-gray-300" href="#personal-trainer">
+              <Link className="hover:text-gray-300" href="/#personal-trainer">
                 Personal training
               </Link>
-              <Link className="hover:text-gray-300" href="#results">
+              <Link className="hover:text-gray-300" href="/#results">
                 Results
               </Link>
-              <Link className="hover:text-gray-300" href="#booking">
+              <Link className="hover:text-gray-300" href="/#booking">
                 Booking
               </Link>
-              <Link className="hover:text-gray-300" href="#contact">
+              <Link className="hover:text-gray-300" href="/#contact">
                 Contact
               </Link>
             </div>
@@ -112,35 +112,35 @@ export default function Navbar() {
           <Link
             onClick={() => setOpen(false)}
             className="hover:text-gray-300"
-            href="#whoiam"
+            href="/#whoiam"
           >
             Who I am
           </Link>
           <Link
             onClick={() => setOpen(false)}
             className="hover:text-gray-300"
-            href="#personal-trainer"
+            href="/#personal-trainer"
           >
             Personal training
           </Link>
           <Link
             onClick={() => setOpen(false)}
             className="hover:text-gray-300"
-            href="#results"
+            href="/#results"
           >
             Results
           </Link>
           <Link
             onClick={() => setOpen(false)}
             className="hover:text-gray-300"
-            href="#booking"
+            href="/#booking"
           >
             Booking
           </Link>
           <Link
             onClick={() => setOpen(false)}
             className="hover:text-gray-300"
-            href="#contact"
+            href="/#contact"
           >
             Contact
           </Link>
