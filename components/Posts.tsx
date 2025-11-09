@@ -1,7 +1,6 @@
 import { getPosts } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import PostCard from "./PostCard";
-import { type Post } from "@/sanity/types";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -50,8 +49,8 @@ export default async function Posts() {
 
         {/* Griglia */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {posts.slice(0, 3).map((post: Post) => (
-            <PostCard key={post._id} post={post as Post} />
+          {posts.slice(0, 3).map((post) => (
+            <PostCard key={post._id} post={post} />
           ))}
         </div>
 
