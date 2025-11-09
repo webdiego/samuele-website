@@ -18,11 +18,13 @@ export default function Booking() {
         </p>
       </div>
       <div>
-        <Cal
-          calLink={`${process.env.NEXT_PUBLIC_CAL}`}
-          style={{ width: "100%", height: "100%" }}
-          config={{ theme: "light", layout: "month_view" }}
-        />
+        <div className="min-h-[700px]">
+          <Cal
+            calLink={`${process.env.NEXT_PUBLIC_CAL}`}
+            style={{ width: "100%", height: "100%" }}
+            config={{ theme: "light", layout: "month_view" }}
+          />
+        </div>
       </div>
     </div>
   );
