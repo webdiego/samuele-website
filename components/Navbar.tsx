@@ -94,8 +94,8 @@ export default function Navbar() {
               <Link className="hover:text-gray-300" href="/#booking">
                 Booking
               </Link>
-              <Link className="hover:text-gray-300" href="/#studies">
-                Studies
+              <Link className="hover:text-gray-300" href="/#articles">
+                Articles
               </Link>
               <Link className="hover:text-gray-300" href="/#contact">
                 Contact
@@ -143,9 +143,9 @@ export default function Navbar() {
           <Link
             onClick={() => setOpen(false)}
             className="hover:text-gray-300"
-            href="/#studies"
+            href="/#articles"
           >
-            Studies
+            Articles
           </Link>
           <Link
             onClick={() => setOpen(false)}

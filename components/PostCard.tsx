@@ -4,18 +4,32 @@ import Image from "next/image";
 import { type Post } from "@/sanity/types";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
+import { Calendar } from "lucide-react";
 const builder = imageUrlBuilder(client);
 
 interface PostCardProps {
   post: Post;
 }
 export default function PostCard({ post }: PostCardProps) {
+  const dt = new Date(post.publishedAt);
+
+  const fmt = new Intl.DateTimeFormat("it-IT", {
+    timeZone: "Europe/Rome",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour12: false,
+  });
   return (
     <>
       <div className="w-full p-3 border border-slate-100 rounded-sm flex flex-col justify-between gap-2 bg-neutral-50">
+        <div className="flex items-center text-slate-500">
+          <Calendar size={15} />
+          <p className="text-xs ml-1 ">{fmt.format(dt)}</p>
+        </div>
         <h1 className="font-bold  line-clamp-2">{post.title}</h1>
         <p className="text-xs line-clamp-3">{post.intro}</p>
+
         <div className="mt-5">
           <Image
             priority
@@ -26,6 +40,7 @@ export default function PostCard({ post }: PostCardProps) {
             className="w-full h-[150px] object-cover"
           />
         </div>
+
         <div className="w-full mt-2">
           <Link href={`/articles/${post.slug.current}`}>
             <Button className="text-black w-full" variant={"outline"}>
