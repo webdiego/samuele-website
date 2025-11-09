@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-// import { SanityLive } from "@/sanity/lib/live";
+import { SanityLive } from "@/sanity/lib/live";
 const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" data-scroll-behavior="smooth">
       <body className={` ${inter.className} antialiased`}>
         <Navbar />
-
+        <SanityLive />
         {children}
       </body>
     </html>
