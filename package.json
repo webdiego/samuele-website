@@ -30,7 +30,7 @@
     "react-dom": "^19",
     "sanity": "^4.13.0",
     "shadcn": "^3.5.0",
-    "styled-components": "^6.1.15",
+    "styled-components": "^6.1",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
