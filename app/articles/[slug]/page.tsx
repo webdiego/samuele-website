@@ -1,7 +1,7 @@
 import TextBlock from "@/components/TextBlock";
 import { getPost } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
-
+import { Download } from "lucide-react";
 export default async function PostPage({
   params,
 }: {
@@ -31,6 +31,25 @@ export default async function PostPage({
       />
       <div className="max-w-xl mx-auto py-10 pb-20 px-4 ">
         <TextBlock value={post.content} />
+        <div className="flex gap-2">
+          {post.files &&
+            post.files.length > 0 &&
+            post.files?.map((file) => (
+              <a
+                key={file.name}
+                href={file.url!}
+                download={file.name}
+                className=" text-xs px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+              >
+                <p className="inline ">
+                  <span className="inline-block mr-2">
+                    <Download size={14} />
+                  </span>
+                  Download {file.name}
+                </p>
+              </a>
+            ))}
+        </div>
       </div>
     </div>
   ) : null;

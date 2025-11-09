@@ -48,6 +48,18 @@ export type BlockContent = Array<{
   url?: string;
   _type: "embedVideo";
   _key: string;
+} | {
+  asset?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+  };
+  media?: unknown;
+  name?: string;
+  description?: string;
+  _type: "files";
+  _key: string;
 }>;
 
 export type Post = {
@@ -59,6 +71,19 @@ export type Post = {
   title: string;
   intro: string;
   slug: Slug;
+  files?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+    };
+    media?: unknown;
+    name?: string;
+    description?: string;
+    _type: "file";
+    _key: string;
+  }>;
   publishedAt: string;
   image: {
     asset?: {
@@ -225,7 +250,7 @@ export type GetPostsResult = Array<{
   content: BlockContent;
 }>;
 // Variable: getPost
-// Query: *[_type == 'post' && slug.current == $slug][0] {  'id': _id,  title,  content,  'slug': slug.current,  'image': image.asset->url,  publishedAt,  text}
+// Query: *[_type == 'post' && slug.current == $slug][0] {  'id': _id,  title,  content,  'slug': slug.current,  'image': image.asset->url,  publishedAt,  text,  files[]{   'id': _id,    name,    description,    'url': asset->url  }}
 export type GetPostResult = {
   id: string;
   title: string;
@@ -234,6 +259,12 @@ export type GetPostResult = {
   image: string | null;
   publishedAt: string;
   text: null;
+  files: Array<{
+    id: null;
+    name: string | null;
+    description: string | null;
+    url: string | null;
+  }> | null;
 } | null;
 
 // Query TypeMap
@@ -241,6 +272,6 @@ import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     "\n*[_type == \"post\"] | order(_createdAt desc) {\n  _id,\n  _type,\n  _createdAt,\n  _updatedAt,\n  _rev,\n  title,\n  intro,\n  slug,\n  publishedAt,\n  image,\n  content\n}\n": GetPostsResult;
-    "\n*[_type == 'post' && slug.current == $slug][0] {\n  'id': _id,\n  title,\n  content,\n  'slug': slug.current,\n  'image': image.asset->url,\n  publishedAt,\n  text\n}": GetPostResult;
+    "\n*[_type == 'post' && slug.current == $slug][0] {\n  'id': _id,\n  title,\n  content,\n  'slug': slug.current,\n  'image': image.asset->url,\n  publishedAt,\n  text,\n  files[]{\n   'id': _id,\n    name,\n    description,\n    'url': asset->url\n  }\n}": GetPostResult;
   }
 }

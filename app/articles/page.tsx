@@ -2,8 +2,6 @@ import { getPosts } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import PostCard from "@/components/PostCard";
 import { type Post } from "@/sanity/types";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default async function Posts() {
   const { data: posts } = await sanityFetch({

@@ -34,7 +34,30 @@ export const post = defineType({
     //   of: [{ type: "reference", to: [{ type: "author" }] }],
     //   validation: (Rule) => Rule.required().min(1),
     // }),
-
+    defineField({
+      title: "Files",
+      name: "files",
+      type: "array",
+      of: [
+        {
+          type: "file",
+          fields: [
+            {
+              name: "name",
+              type: "string",
+              title: "Name",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "description",
+              type: "string",
+              title: "Description",
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+      ],
+    }),
     defineField({
       name: "publishedAt",
       title: "Published at",

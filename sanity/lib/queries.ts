@@ -33,7 +33,13 @@ export const getPost = defineQuery(`
   'slug': slug.current,
   'image': image.asset->url,
   publishedAt,
-  text
+  text,
+  files[]{
+   'id': _id,
+    name,
+    description,
+    'url': asset->url
+  }
 }`);
 
 // export const getCategories = defineQuery(`
