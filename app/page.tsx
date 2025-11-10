@@ -5,6 +5,7 @@ import Footer from "@/components/sections/Footer";
 import Result from "@/components/sections/Result";
 import Booking from "@/components/sections/Booking";
 import Posts from "@/components/sections/Posts";
+import Contact from "@/components/sections/Contact";
 export default function Home() {
   return (
     <div>
@@ -14,6 +15,7 @@ export default function Home() {
       <Result />
       <Booking />
       <Posts />
+      <Contact />
       <Footer />
     </div>
   );

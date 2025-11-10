@@ -12,7 +12,7 @@ export default async function Posts() {
   return (
     <div
       id="articles"
-      className="w-full mt-10 border relative bg-[#ffffff] overflow-hidden "
+      className="w-full mt-10 relative bg-[#ffffff] overflow-hidden "
     >
       {/* Background griglia */}
       <div
